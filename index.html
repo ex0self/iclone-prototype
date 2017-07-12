@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>iClone</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="manifest.json">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="180x180.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="167x167.png">
+
+	<!-- Include the jQuery library -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/validation.min.js"></script>
+
+	<!-- twitter -->
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+
+	<script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" href="chat.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+	<!--HOME PAGE-->
+
+	<div data-role="page" id="HomePage">
+		<div data-role="header" data-position="fixed">
+			<a href="#DescriptionPage"><img src="24x.png"></a>
+			<p align="center">iClone </p>
+		</div>
+
+		<p>
+
+			<div data-role="main" class="ui-content">
+				<h3 align="center">Bridge the gap between life and death</h3>
+
+
+				<button class="button" class="ui-btn ui-btn-b" <span><a href="#page1">Register</a></span></button>
+				<button class="button" class="ui-btn ui-btn-b" <span><a href="#page2">Log In</a></span></button>
+
+			</div>
+
+	</div>
+
+
+	<!-- PAGE 1: Registeration page-->
+
+	<div data-role="page" id="page1">
+
+		<div data-role="header">
+			<a href="#DescriptionPage"><img src="24x.png"></a>
+
+			<p align="center">Sign Up </p>
+		</div>
+
+		<form id="registerForm" name="form">
+			<div class="ui-field-contain">
+				<input type="text" name="firstname" id="firstname" placeholder="Your First Name" data-theme="b">
+				<input type="text" name="lastname" id="lastname" placeholder="Your Last Name" data-theme="b">
+				<input type="text" name="email" id="email" placeholder="Your Email" data-theme="b">
+				<input type="text" name="userid" id="userid" placeholder="Create a Username" data-theme="b">
+				<input class="pass" type="password" name="password" id="password" placeholder="Create your password" data-theme="b">
+				<input class="pass" type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm your password" data-theme="b">
+				<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+			</div>
+			<span id="Error"></span>
+
+			<p align="center">
+				<input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true" onclick="userRegisteration()"></span>
+			</p>
+		</form>
+
+	</div>
+	</div>
+
+	<!-- PAGE 2: THE PAGE WHERE FOR RETURNING USERS -->
+
+	<div data-role="page" id="page2">
+
+		<div data-role="header">
+			<a href="#DescriptionPage"><img src="24x.png"></a>
+
+			<p align="center">Welcome Back </p>
+		</div>
+
+		<div data-role="content">
+
+			<p>Please fill up the required fields:</p>
+
+			<form name="form" method="post" id="login-form">
+				<div class="ui-field-contain">
+					<input type="text" name="username" id="username" placeholder="Username" data-theme="b">
+					<span id="check-e"></span>
+
+					<input class="pass" type="password" name="password" id="password" placeholder="password" data-theme="b">
+
+				</div>
+
+				<p align="center">
+					<p align="center">
+						<input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true" name="btn-login" id="btn-login"></span>
+					</p>
+					<div id="error">
+						<!-- error will be shown here ! -->
+					</div>
+				</p>
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
+	<!-- PAGE 05 - CHAT PAGE -->
+
+	<div data-role="page" id="page3">
+		<div data-role="header" data-position="fixed">
+			<a href="#HomePage"><img src="24x.png"></a>
+			<div id="page-wrap">
+
+				<p align="center"> Chat </p>
+				<form id="twitter-profile">
+					<p>Enter a public twitter account: </p>
+					<input id="profile-id" type='text'>
+				</form>
+				<form id="chatForm">
+					<p id="name-area">Enter your message:</p>
+					<input type="text" id="chatInput">
+					<div id="example5"></div>
+					<div id="chat-wrap">
+
+						<div class="container clearfix">
+							<div class="chat">
+								<div class="chat-history">
+									<ul class="chat-ul" id="chat-area">
+
+
+									</ul>
+
+								</div>
+								<!-- end chat-history -->
+
+							</div>
+							<!-- end chat -->
+						</div>
+						<div></div>
+					</div>
+				</form>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- DESCRIPTION PAGE -->
+
+	<div data-role="page" id="DescriptionPage">
+		<div data-role="header" data-position="fixed">
+			<a href="#HomePage"><img src="24x.png"></a>
+			<p align="center">About iClone </p>
+		</div>
+		<div data-role="content">
+			<p> Welcome to iClone. iClone created by Rana Zandi, is an experimental web app prototype. iClone replies to chat messages by grabbing the last 10 tweets of any public twitter user entered by the iClone user.</p>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
